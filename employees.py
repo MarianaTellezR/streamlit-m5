@@ -15,12 +15,13 @@ st.write('d) Gráficas.')
 
 st.subheader('Manejo de cache para el dataframe') # SUBHEADER
 
-DATA_URL = ('/workspaces/streamlit-m5/Employees.csv')
+DATA_URL = ('Employees.csv')
 
 @st.cache
 def load_data(nrows):
     employees = pd.read_csv(DATA_URL, nrows=nrows)
     return employees
+    
 
 data_load_state = st.text('Loading data...')
 employees = load_data(500)
